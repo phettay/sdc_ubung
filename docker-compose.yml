@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  sc_übung_2-uplink:
+    # if failure  or server restarts, container will restart
+    restart: always 
+    container_name: sc_übung_2-uplink
+    image: sc_übung_2-uplink
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+        - 8080:8080
+        - 8888:8888
+        - 0000:0000
+    container_name: pk-dashboard
